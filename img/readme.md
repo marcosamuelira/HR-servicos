@@ -1,1 +1,1 @@
-Imasgens pasta
+Imagens pasta
