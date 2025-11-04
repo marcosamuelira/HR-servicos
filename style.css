@@ -1,16 +1,16 @@
-/* Layout >>>>>>>>>>>>>>>>>>>>>>>>>> */
+/* Layout >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
 
 /* Variáveis */
 :root {
-    --azulClaro: #e9dada;
-    --azulMedio: #33cccc;
-    --branco: #fff;
-    --cinzaClaro: #e8e8e8;
-    --cinzaMedio: #5f3131;
-    --cinzaEscuro: #6876a1;
-    --dourado: #ffc90e;
-    --preto: #4e5f63;
-    --rosa: #bc82b6;
+    --azul: #2e7a96;
+    --azulEscuro: #14243c;
+    --azulMedio: #191c25;
+    --preto: #000000;
+    --branco: #ffff;
+    --verde: #88e788;
+    --vermelho: #ff2c2c;
+    --azuleletrico: #3498db;
+
 }
 
 /* CSS Reset */
@@ -24,7 +24,7 @@ body {
     font-family: "Opens Sans", sans-serif;
     font-size 1em;
 }
-
+    
 .container {
     display: flex;
     margin: 0 auto;
@@ -33,31 +33,40 @@ body {
 .btn {
     text-decoration: none;
     font-size: 1.3rem;
-    font-weight: 700;
-    background-color: #33cccc;
-    padding: 10px 40px;
-    color: #ffffff;
-    border-radius: 25px;
-    border: 2px solid var(--branco);
+    font-weight: 600;
+    background-color: var(--azuleletrico);
+    color: var(--branco);
+    border: 1px solid var(--azul);
+    padding: 0.8rem 1.8rem;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+
 }
 
-/* Fim - Layout <<<<<<<<<<<<<<<<<<<< */
+.btn:hover {
+    background-color: #2980b9;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Fim - Layout <<<<<<<<<<<<<<<<<<<<<<<<<<< */
 
 
-/* Smartphone Portrait >>>>>>>>>>>>> */
+/* Smartphone Portrait >>>>>>>>>>>>>>>>>>>> */
 
-/* cabeçalho */
+/* Cabecalho */
 header {
-    height: 70px;
-    background-color: var(#--azulMedio);
+    height: 85.5px;
+    background-color: var(--azulMedio);
+    border-bottom: 2.5px solid var(--azul);
 }
 
 #logo img {
-    width: 110px;
-    height: 110px;
-    margin-top:20px;
-    margin-left:15px;
-    border-radius:90px;
+    height: 150px;
+    width: 150px;
+    padding: 15px;
 }
 
 #check {
@@ -65,42 +74,44 @@ header {
 }
 
 label {
-    color: rgba(158, 115, 114, 0.75);
-    font-size: 3rem;
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 1.7rem;
     position: fixed;
     right: 15px;
-    top: 5px;
+    top: 21.37px;
 }
 
 nav ul {
     height: 100vh;
-    background-color: rgba(197, 183, 53, 0.9);
+    background-color: rgba(25, 28, 37, 0.9);
     position: fixed;
-    top: 60px;
-    right: -65%;
-    width: 65%;
-    transition: all 0.5s;
+    right: -55%;
+    width: 55%;
+    top: 85.4px;
+    transition: all 0.6s;
 }
 
-/* ação para a caixa checkbox */
-/* quando selecionado mudar propriedades ul */
+/* Ação para o Chackbox */
+/* Quando selecionado alterar propriedades UL */
+
 #check:checked~ul {
-    right: 2px;
+    right: 0px;
 }
 
 nav ul li {
     list-style: none;
-    padding: 20px;
-    text-align: right;
-    border-bottom: 1px solid var(--cinzaEscuro);
+    padding: 17.5px;
+    text-align: left;
+    border-bottom: 1.5px solid var(--azulMedio);
 }
 
 nav ul li a {
     text-decoration: none;
-    color: var(--azulClaro);
+    color: var(--branco);
+    font-style: oblique;
 }
 
-/* Principal*/
+/* Principal */
 main {
     height: 50vh;
     background: url(./img/Banner_principal.jpg);
@@ -116,24 +127,27 @@ main .container {
 }
 
 main h1 {
-    color: var(#000);
-    font-family: "kolen, sans-serif";
+    color: var(--branco);
+    font-family: "Poppins", sans-serif;
     text-shadow: 0px 5px 10px var(--preto), 0px 10px 10px rgba(0, 0, 0, 0.15), 0px 15px 15px rgba(0, 0, 0, 0.1), 0px 20px 20px rgba(0, 0, 0, 0.1);
+    font-size: 1.8rem;
+    text-align: center;
+    margin: 10px;
 }
 
 main h2 {
-    color: var(#000);
-    font-size: 1.85rem;
-    font-weight: 900;
-    text-shadow: 0px 5px 10px var(--preto), 0px 10px 10px rgba(0, 0, 0, 0.15), 0px 15px 15px rgba(0, 0, 0, 0.1), 0px 20px 20px rgba(0, 0, 0, 0.1);   
+    color: var(--branco);
+    font-size: 0.7rem;
+    font-weight: 200;
+    text-shadow: 0px 5px 10px var(--preto), 0px 10px 10px rgba(0, 0, 0, 0.15), 0px 15px 15px rgba(0, 0, 0, 0.1), 0px 20px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-bottom: 20px;
 }
 
+/* Fim - Smartphone Portrait >>>>>>>>>>>>>> */
 
 
-/* Fim - Smartphone Portrait <<<<<<< */
-
-
-/* Smartphone Landscape >>>>>>>>>>>> */
+/* Smartphone Landscape >>>>>>>>>>>>>>>>>>> */
 @media (min-width: 576px) {
 
     /* Layout */
@@ -141,64 +155,69 @@ main h2 {
         max-width: 540px;
     }
 
-    /* Cabeçalho */
+    /* Cabecalho */
     nav ul {
-        width: 40%;
-        right: -40%;
+        width: 30%;
+        right: -30%;
     }
 
-
-    /* Princpal */
+    /* Principal */
     main {
-        height: 75vh;
-    }
-
-    main h1 {
-        font-size: 2.75rem;
+        height: 80vh;
     }
 
     main h2 {
-        font-size: 2.5rem;
+        font-size: 1rem;
     }
 }
 
-/* Fim - Smartphone Landscape <<<<<< */
+/* Fim - Smartphone Landscape >>>>>>>>>>>>> */
 
 
-/* Tablet Portrait >>>>>>>>>>>>>>>>> */
+/* Tablet Portrait >>>>>>>>>>>>>>>>>>>>>>>> */
 @media (min-width: 768px) {
 
     /* Layout */
     .container {
         max-width: 720px;
     }
-    /* Principal*/
+
+    /* Principal */
+
+    main {
+        height: 92vh;
+    }
 
     main h1 {
-        font-size: 3.9rem;
+        font-size: 2rem;
     }
+
     main h2 {
-        font-size: 3rem;
-    } 
+        font-size: 1.4rem;
+    }
 }
 
+/* Fim - Tablet Portrait >>>>>>>>>>>>>>>>>> */
 
-/* Fim - Tablet Portrait <<<<<<<<<<< */
 
-
-/* Tablet Landscape >>>>>>>>>>>>>>>> */
+/* Tablet landscape >>>>>>>>>>>>>>>>>>>>>>> */
 @media (min-width: 992px) {
 
     /* Layout */
     .container {
         max-width: 960px;
     }
+
+    /* Principal */
+    main {
+        height: 89vh;
+    }
 }
 
-/* Fim - Tablet Landscape <<<<<<<<<< */
+/* Fim - TTablet landscape >>>>>>>>>>>>>>>> */
 
 
-/* Notebook / PC >>>>>>>>>>>>>>>>>>> */
+/* Notebook / PC  >>>>>>>>>>>>>>>>>>>>>>>>> */
 @media (min-width: 1200px) {
 
     /* Layout */
@@ -207,17 +226,18 @@ main h2 {
         justify-content: space-between;
     }
 
-    /* Cabeçalho */
+    /* Cabecalho */
     header {
         height: 100px;
     }
 
+    /* Logo */
     #logo img {
-        width: 194px;
-        height: 194px;
-        
+        width: 200px;
+        height: 200px;
     }
 
+    /* Menu Hamburguer */
     label {
         display: none;
     }
@@ -227,7 +247,7 @@ main h2 {
         width: 100%;
         height: auto;
         background-color: transparent;
-        margin-top: 20px;
+        margin-top: 16.2px;
     }
 
     nav ul li {
@@ -235,23 +255,39 @@ main h2 {
         float: left;
     }
 
+    nav ul li a {
+        font-size: 1.1rem;
+    }
+
     nav ul li a:hover {
-        color: var(--dourado);
+        color: var(--azul);
+        text-decoration: underline;
+    }
+
+    /** Principal */
+    main {
+        height: 88vh;
     }
 }
 
-/* Fim - Notebook / PC <<<<<<<<<<<< */
+/* Fim - Notebook / PC >>>>>>>>>>>>>>>>>>>> */
 
 
-/* Full HD / 4K >>>>>>>>>>>>>>>>>>> */
+/* FULL HD / 4K  >>>>>>>>>>>>>>>>>>>>>>>>>> */
 @media (min-width: 1400px) {
 
     /* Layout */
     .container {
         max-width: 1320px;
     }
+
+    /* Principal */
+    main {
+        height: 89vh;
+    }
+    main h1 {
+        font-size: 3rem;
+    }
 }
 
-/* Fim - Full HD / 4K <<<<<<<<<<<< */
-
-
+/* Fim - FULL HD / 4K >>>>>>>>>>>>>>>>>>>>> */
