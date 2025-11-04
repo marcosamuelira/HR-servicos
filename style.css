@@ -49,7 +49,7 @@ body {
 /* cabeçalho */
 header {
     height: 70px;
-    background-color: var(#43ad35b7);
+    background-color: var(#--azulMedio);
 }
 
 #logo img {
@@ -253,4 +253,5 @@ main h2 {
 }
 
 /* Fim - Full HD / 4K <<<<<<<<<<<< */
+
 
