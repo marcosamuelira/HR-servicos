@@ -3,7 +3,7 @@
 /* Variáveis */
 :root {
     --azulClaro: #e9dada;
-    --azulMedio: #33cccc;
+    --azulEscuro: #083b5a;
     --branco: #fff;
     --cinzaClaro: #e8e8e8;
     --cinzaMedio: #5f3131;
@@ -48,7 +48,7 @@ body {
 /* cabeçalho */
 header {
     height: 70px;
-    background-color: var(#43ad35b7);
+    background-color: var(azulEscuro);
 }
 
 #logo img {
@@ -252,3 +252,4 @@ main h2 {
 }
 
 /* Fim - Full HD / 4K <<<<<<<<<<<< */
+
