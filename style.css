@@ -7,7 +7,7 @@
     --branco: #fff;
     --cinzaClaro: #e8e8e8;
     --cinzaMedio: #5f3131;
-    --cinzaEscuro: #6876a1;
+    --cinzaEscuro: #181b24;
     --dourado: #ffc90e;
     --preto: #000000;
     --rosa: #bc82b6;
@@ -52,8 +52,8 @@ header {
 }
 
 #logo img {
-    width: 115px;
-    height: 115px;
+    width: 200px;
+    height: auto;
     margin-top: 20px;
     margin-left: 10px;
     border-radius: 100px;
@@ -73,30 +73,30 @@ label {
 
 nav ul {
     height: 100vh;
-    background-color: var(--CinzaClaro);
+    background-color: var(--cinzaEscuro);
     position: fixed;
     top: 70px;
-    right: -65%;
-    width: 65%;
+    right: -70%;
+    width: 42%;
     transition: all 0.5s;
 }
 
 /* ação para a caixa checkbox */
 /* quando selecionado mudar propriedades ul */
 #check:checked~ul {
-    right: 1px;
+    right: 0px;
 }
 
 nav ul li {
     list-style: none;
     padding: 20px;
     text-align: center;
-    border-bottom: 1px solid var(--azulEscuro);
+    border-bottom: 1px solid var(--CinzaClaro);
 }
 
 nav ul li a {
     text-decoration: none;
-    color: var(--azulEscuro);
+    color: var(--cinzaClaro);
 }
 
 /* Principal*/
@@ -142,14 +142,14 @@ main h2 {
 
     /* Cabeçalho */
     nav ul {
-        width: 40%;
-        right: -40%;
+        width: 42%;
+        right: -42%;
     }
 
 
     /* Princpal */
     main {
-        height: 75vh;
+        height: 86vh;
     }
 
     main h1 {
