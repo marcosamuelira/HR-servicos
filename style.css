@@ -47,16 +47,17 @@ body {
 
 /* cabeçalho */
 header {
-    height: 70px;
+    height: 180px;
     background-color: var(--azulEscuro);
 }
+
 
 #logo img {
     width: 200px;
     height: auto;
     margin-top: 20px;
     margin-left: 10px;
-    border-radius: 100px;
+    border-radius: 20px;
 }
 
 #check {
@@ -67,8 +68,8 @@ label {
     color: var(--CinzaClaro);
     font-size: 3rem;
     position: fixed;
-    right: 15px;
-    top: 5px;
+    right: 20px;
+    top: 15px;
 }
 
 nav ul {
@@ -121,13 +122,53 @@ main h1 {
 }
 
 main h2 {
-    color: var(#000);
+    color: var(--preto);
     font-size: 1.85rem;
     font-weight: 900;
     text-shadow: 0px 5px 10px var(--preto), 0px 10px 10px rgba(0, 0, 0, 0.15), 0px 15px 15px rgba(0, 0, 0, 0.1), 0px 20px 20px rgba(0, 0, 0, 0.1);   
 }
 
+/* Destaque */
+#destaque {
+    padding: 50px 10px;
+    background: url(./img/pintura_residencia.jpg);
+    background-size: cover;
 
+
+}
+
+ #destaque .container {
+    flex-direction: column;
+
+
+ }
+
+#hero {
+    text-align: center;
+
+}
+
+ #hero img{
+    width: 300px;
+    height: 300px;
+    border-radius: 100%;
+    margin-bottom: 50px;
+ }
+
+ #hero-text h2 {
+    margin-bottom: 15px;
+
+ }
+
+ .topic {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+ }
+ .topic p{
+    margin-left: 15px;
+    
+ }
 
 /* Fim - Smartphone Portrait <<<<<<< */
 
@@ -158,6 +199,29 @@ main h2 {
 
     main h2 {
         font-size: 2.5rem;
+    }
+    /* Destque */
+    #destaque {
+        padding: 50px 0px;
+    }
+    #destaque .container {
+        flex-direction: row;
+        align-items: center;
+
+
+
+    }
+    #hero{
+        text-align: left;
+    }
+    #hero img {
+        width: 200px;
+        height: 200px;
+        margin:0px 50px 0px 0px;
+
+    }
+    .topic {
+        display: none;
     }
 }
 
@@ -237,7 +301,28 @@ main h2 {
     nav ul li a:hover {
         color: var(--dourado);
     }
+
+    /* destaque */
+    #destaque {
+        /*Efeito Paralax bacanam em computadores*/
+        background-attachment: fixed; 
+    }
+
+    #hero img{
+        width: 400px;
+        height: 400px;
+
+    }
+
+    .topic {
+        display:flex
+
+    }
+
+
+
 }
+
 
 /* Fim - Notebook / PC <<<<<<<<<<<< */
 
