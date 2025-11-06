@@ -1,339 +1,329 @@
-/* Layout >>>>>>>>>>>>>>>>>>>>>>>>>> */
+/* Layout >>>>>>>>>>>>>>>>>>>>>>>>>> */ /* <!-- separador visual da seção de layout --> */
 
-/* Variáveis */
-:root {
-    --CinzaClaro: #fefef9;
-    --azulEscuro: #083b5a;
-    --branco: #fff;
-    --cinzaClaro: #e8e8e8;
-    --cinzaMedio: #5f3131;
-    --cinzaEscuro: #181b24;
-    --dourado: #ffc90e;
-    --preto: #000000;
-    --rosa: #bc82b6;
+/* Variáveis */ /* <!-- agrupamento das variáveis de cor (CSS Custom Properties) --> */
+:root { /* <!-- escopo global das variáveis --> */
+    --CinzaClaro: #fefef9;           /* <!-- cor clara para fundos neutros --> */
+    --azulEscuro: #083b5a;           /* <!-- cor principal do cabeçalho --> */
+    --branco: #fff;                   /* <!-- branco padrão --> */
+    --cinzaClaro: #e8e8e8;           /* <!-- cinza claro para divisórias/menus --> */
+    --cinzaMedio: #5f3131;           /* <!-- cinza médio (não usado aqui) --> */
+    --cinzaEscuro: #181b24;          /* <!-- cinza escuro (menu lateral) --> */
+    --dourado: #ffc90e;              /* <!-- cor de destaque (hover no menu) --> */
+    --preto: #000000;                /* <!-- preto padrão --> */
+    --rosa: #bc82b6;                 /* <!-- cor opcional (não usada aqui) --> */
 }
 
-/* CSS Reset */
+/* CSS Reset */ /* <!-- zera margens e paddings, padroniza box model --> */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    margin: 0;                        /* <!-- remove margens padrão --> */
+    padding: 0;                       /* <!-- remove paddings padrão --> */
+    box-sizing: border-box;           /* <!-- inclui bordas no cálculo de width/height --> */
 }
 
 body {
-    font-family: "Opens Sans", sans-serif;
+    font-family: "Opens San", sans-serif; /* <!-- define tipografia global --> */
 }
 
 .container {
-    display: flex;
-    margin: 0 auto;
+    display: flex;                    /* <!-- ativa Flexbox para filhos diretos --> */
+    margin: 0 auto;                   /* <!-- centraliza horizontalmente elementos com largura fixa/max --> */
 }
 
 .btn {
-    text-decoration: none;
-    font-size: 1.3rem;
-    font-weight: 700;
-    background-color: #33cccc;
-    padding: 10px 40px;
-    color: #ffffff;
-    border-radius: 25px;
-    border: 2px solid var(--branco);
+    text-decoration: none;            /* <!-- remove sublinhado de links --> */
+    font-size: 1.3rem;                /* <!-- tamanho do texto do botão --> */
+    font-weight: 700;                 /* <!-- peso do texto (negrito) --> */
+    background-color: #33cccc;        /* <!-- cor de fundo do botão --> */
+    padding: 10px 40px;               /* <!-- área clicável (vertical x horizontal) --> */
+    color: #ffffff;                   /* <!-- cor do texto --> */
+    border-radius: 25px;              /* <!-- bordas arredondadas (pílula) --> */
+    border: 2px solid var(--branco);  /* <!-- borda branca para contraste --> */
 }
 
-/* Fim - Layout <<<<<<<<<<<<<<<<<<<< */
+/* Fim - Layout <<<<<<<<<<<<<<<<<<<< */ /* <!-- fim da seção de layout base --> */
 
 
-/* Smartphone Portrait >>>>>>>>>>>>> */
+/* Smartphone Portrait >>>>>>>>>>>>> */ /* <!-- regras padrão: mobile-first (retrato) --> */
 
 /* cabeçalho */
 header {
-    height: 180px;
-    background-color: var(--azulEscuro);
+    height: 100px;                    /* <!-- altura fixa do header no mobile --> */
+    background-color: var(--azulEscuro); /* <!-- cor de fundo do cabeçalho --> */
+    padding-top: 10px;
 }
 
-
 #logo img {
-    width: 200px;
-    height: auto;
-    margin-top: 20px;
-    margin-left: 10px;
-    border-radius: 20px;
+    width: 120px;                     /* <!-- largura da logo no mobile --> */
+    height: auto;                     /* <!-- mantém proporção da imagem --> */
+    margin-top: 0px;
+    margin-left: 15px;
+
+    
 }
 
 #check {
-    display: none;
+    display: none;                    /* <!-- esconde o checkbox do menu hambúrguer --> */
 }
 
 label {
-    color: var(--CinzaClaro);
-    font-size: 3rem;
-    position: fixed;
-    right: 20px;
-    top: 15px;
+    color: var(--CinzaClaro);         /* <!-- cor do ícone/label do menu --> */
+    font-size: 2rem;                  /* <!-- tamanho grande para o ícone --> */
+    position: fixed;                  /* <!-- fixa o ícone na tela --> */
+    right: 40px;                      /* <!-- distância da borda direita --> */
+    top: 22.5px;                        /* <!-- distância do topo --> */
 }
 
 nav ul {
-    height: 100vh;
-    background-color: var(--cinzaEscuro);
-    position: fixed;
-    top: 70px;
-    right: -70%;
-    width: 42%;
-    transition: all 0.5s;
+    height: 100vh;                    /* <!-- menu ocupa altura total da tela --> */
+    background-color: var(--cinzaEscuro); /* <!-- fundo do menu lateral --> */
+    position: fixed;                  /* <!-- fixa no viewport --> */
+    top: 70px;                        /* <!-- desce um pouco abaixo do header --> */
+    right: -70%;                      /* <!-- esconde o menu fora da tela (direita) --> */
+    width: 42%;                       /* <!-- largura do menu lateral no mobile --> */
+    transition: all 0.5s;             /* <!-- anima a abertura/fechamento --> */
 }
 
 /* ação para a caixa checkbox */
 /* quando selecionado mudar propriedades ul */
 #check:checked~ul {
-    right: 0px;
+    right: 0px;                       /* <!-- quando o checkbox está ativo, traz o menu pra tela --> */
 }
 
 nav ul li {
-    list-style: none;
-    padding: 20px;
-    text-align: center;
-    border-bottom: 1px solid var(--CinzaClaro);
+    list-style: none;                 /* <!-- remove marcadores da lista --> */
+    padding: 20px;                    /* <!-- espaçamento interno de cada item --> */
+    text-align: center;               /* <!-- centraliza o texto dos links --> */
+    border-bottom: 1px solid var(--CinzaClaro); /* <!-- linha divisória entre itens --> */
 }
 
 nav ul li a {
-    text-decoration: none;
-    color: var(--cinzaClaro);
+    text-decoration: none;            /* <!-- remove sublinhado dos links --> */
+    color: var(--cinzaClaro);         /* <!-- cor dos links no menu --> */
 }
 
 /* Principal*/
 main {
-    height: 50vh;
-    background: url(./img/Banner_principal.jpg);
-    background-size: cover;
-    background-position: center;
+    height: 50vh;                     /* <!-- altura da seção principal (metade da tela) --> */
+    background: url(./img/Banner_principal.jpg); /* <!-- imagem de fundo do hero --> */
+    background-size: cover;           /* <!-- cobre toda a área sem distorcer --> */
+    background-position: center;      /* <!-- centraliza o recorte da imagem --> */
 }
 
 main .container {
-    height: 100%;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    height: 100%;                     /* <!-- container ocupa toda a altura do main --> */
+    flex-direction: column;           /* <!-- empilha conteúdo (coluna) --> */
+    align-items: center;              /* <!-- alinha ao centro no eixo cruzado --> */
+    justify-content: center;          /* <!-- centraliza verticalmente --> */
 }
 
 main h1 {
-    color: var(--azulEscuro);
-    font-family: "Opens Sans, sans-serif";
-    text-shadow: 0px 5px 10px var(--preto), 0px 10px 10px rgb(223, 213, 213), 0px 15px 15px rgba(252, 252, 252, 0.836), 0px 20px 20px rgb(255, 255, 255);
+    color: var(--azulEscuro);         /* <!-- cor do título principal --> */
+    font-family: "Opens Sans, sans-serif"; /* <!-- fonte do título (atenção: aspas e nome) --> */
+    text-shadow:                      /* <!-- sombras para dar profundidade no texto --> */
+        0px 5px 10px var(--preto),
+        0px 10px 10px rgb(223, 213, 213),
+        0px 15px 15px rgba(252, 252, 252, 0.836),
+        0px 20px 20px rgb(255, 255, 255);
 }
 
 main h2 {
-    color: var(--preto);
-    font-size: 1.85rem;
-    font-weight: 900;
-    text-shadow: 0px 5px 10px var(--preto), 0px 10px 10px rgba(0, 0, 0, 0.15), 0px 15px 15px rgba(0, 0, 0, 0.1), 0px 20px 20px rgba(0, 0, 0, 0.1);   
+    color: var(--preto);              /* <!-- cor do subtítulo --> */
+    font-size: 1.85rem;               /* <!-- tamanho do subtítulo no mobile --> */
+    font-weight: 900;                 /* <!-- peso máximo (super negrito) --> */
+    text-shadow:                      /* <!-- múltiplas sombras discretas --> */
+        0px 5px 10px var(--preto),
+        0px 10px 10px rgba(0, 0, 0, 0.15),
+        0px 15px 15px rgba(0, 0, 0, 0.1),
+        0px 20px 20px rgba(0, 0, 0, 0.1);   
 }
 
 /* Destaque */
 #destaque {
-    padding: 50px 10px;
-    background: url(./img/pintura_residencia.jpg);
-    background-size: cover;
-
-
+    padding: 50px 10px;               /* <!-- espaçamento interno (vertical e lateral) --> */
+    background: url(./img/pintura_residencia.jpg); /* <!-- imagem de fundo da seção --> */
+    background-size: cover;           /* <!-- cobre toda a área --> */
 }
 
- #destaque .container {
-    flex-direction: column;
-
-
- }
+#destaque .container {
+    flex-direction: column;           /* <!-- empilha conteúdo no mobile --> */
+}
 
 #hero {
-    text-align: center;
-
+    text-align: center;               /* <!-- centraliza conteúdo da área do herói --> */
 }
 
- #hero img{
-    width: 300px;
-    height: 300px;
-    border-radius: 100%;
-    margin-bottom: 50px;
- }
+#hero img{
+    width: 300px;                     /* <!-- tamanho da foto/elemento circular --> */
+    height: 300px;                    /* <!-- mantém quadrado antes do border-radius --> */
+    border-radius: 100%;              /* <!-- círculo perfeito --> */
+    margin-bottom: 50px;              /* <!-- espaço abaixo da imagem --> */
+}
 
- #hero-text h2 {
-    margin-bottom: 15px;
+#hero-text h2 {
+    margin-bottom: 15px;              /* <!-- espaço abaixo do subtítulo --> */
+}
 
- }
+.topic {
+    display: flex;                    /* <!-- layout em linha para ícone + texto --> */
+    align-items: center;              /* <!-- alinha verticalmente ao centro --> */
+    margin-top: 15px;                 /* <!-- separação entre tópicos --> */
+}
+.topic p{
+    margin-left: 15px;                /* <!-- espaço entre ícone/elemento e o texto --> */
+}
 
- .topic {
-    display: flex;
-    align-items: center;
-    margin-top: 15px;
- }
- .topic p{
-    margin-left: 15px;
-    
- }
-
-/* Fim - Smartphone Portrait <<<<<<< */
+/* Fim - Smartphone Portrait <<<<<<< */ /* <!-- fim das regras padrão mobile --> */
 
 
-/* Smartphone Landscape >>>>>>>>>>>> */
+/* Smartphone Landscape >>>>>>>>>>>> */ /* <!-- ajustes quando a tela fica mais larga (>=576px) --> */
 @media (min-width: 576px) {
 
     /* Layout */
     .container {
-        max-width: 540px;
+        max-width: 540px;             /* <!-- limita a largura do container nesse degrau --> */
     }
 
     /* Cabeçalho */
     nav ul {
-        width: 42%;
-        right: -42%;
+        width: 42%;                   /* <!-- largura do menu lateral em landscape --> */
+        right: -42%;                  /* <!-- posição escondida inicial do menu --> */
     }
-
 
     /* Princpal */
     main {
-        height: 86vh;
+        height: 86vh;                 /* <!-- hero mais alto em landscape --> */
     }
 
     main h1 {
-        font-size: 2.75rem;
+        font-size: 2.75rem;           /* <!-- aumenta o título principal --> */
     }
 
     main h2 {
-        font-size: 2.5rem;
+        font-size: 2.5rem;            /* <!-- aumenta o subtítulo --> */
     }
+
     /* Destque */
     #destaque {
-        padding: 50px 0px;
+        padding: 50px 0px;            /* <!-- remove padding lateral, mantém vertical --> */
     }
     #destaque .container {
-        flex-direction: row;
-        align-items: center;
-
-
-
+        flex-direction: row;          /* <!-- coloca conteúdo lado a lado --> */
+        align-items: center;          /* <!-- centraliza verticalmente --> */
     }
     #hero{
-        text-align: left;
+        text-align: left;             /* <!-- alinha conteúdo do herói à esquerda --> */
     }
     #hero img {
-        width: 200px;
-        height: 200px;
-        margin:0px 50px 0px 0px;
-
+        width: 200px;                 /* <!-- imagem menor neste degrau --> */
+        height: 200px;                /* <!-- mantém quadrado --> */
+        margin:0px 50px 0px 0px;      /* <!-- espaço à direita da imagem --> */
     }
     .topic {
-        display: none;
+        display: none;                /* <!-- oculta tópicos aqui (decisão de layout) --> */
     }
 }
 
-/* Fim - Smartphone Landscape <<<<<< */
+/* Fim - Smartphone Landscape <<<<<< */ /* <!-- fim do breakpoint 576px --> */
 
 
-/* Tablet Portrait >>>>>>>>>>>>>>>>> */
+/* Tablet Portrait >>>>>>>>>>>>>>>>> */ /* <!-- tablet em pé (>=768px) --> */
 @media (min-width: 768px) {
 
     /* Layout */
     .container {
-        max-width: 720px;
+        max-width: 720px;             /* <!-- limite de largura neste degrau --> */
     }
-    /* Principal*/
 
+    /* Principal*/
     main h1 {
-        font-size: 3.9rem;
+        font-size: 3.9rem;            /* <!-- título maior no tablet --> */
     }
     main h2 {
-        font-size: 3rem;
+        font-size: 3rem;              /* <!-- subtítulo maior no tablet --> */
     } 
 }
 
+/* Fim - Tablet Portrait <<<<<<<<<<< */ /* <!-- fim do breakpoint 768px --> */
 
-/* Fim - Tablet Portrait <<<<<<<<<<< */
 
-
-/* Tablet Landscape >>>>>>>>>>>>>>>> */
+/* Tablet Landscape >>>>>>>>>>>>>>>> */ /* <!-- tablet deitado / notebooks pequenos (>=992px) --> */
 @media (min-width: 992px) {
 
     /* Layout */
     .container {
-        max-width: 960px;
+        max-width: 960px;             /* <!-- largura alvo neste degrau --> */
     }
 }
 
-/* Fim - Tablet Landscape <<<<<<<<<< */
+/* Fim - Tablet Landscape <<<<<<<<<< */ /* <!-- fim do breakpoint 992px --> */
 
 
-/* Notebook / PC >>>>>>>>>>>>>>>>>>> */
+/* Notebook / PC >>>>>>>>>>>>>>>>>>> */ /* <!-- notebooks/desktop médios (>=1200px) --> */
 @media (min-width: 1200px) {
 
     /* Layout */
     .container {
-        max-width: 1140px;
-        justify-content: space-between;
+        max-width: 1140px;            /* <!-- largura máxima comum em desktops --> */
+        justify-content: space-between;/* <!-- distribui itens com espaço entre eles --> */
     }
 
     /* Cabeçalho */
     header {
-        height: 100px;
+        height: 100px;                /* <!-- altura do cabeçalho em desktop --> */
     }
 
     #logo img {
-        width: 194px;
-        height: 194px;
-        
+        width: 194px;                 /* <!-- logo maior em desktop --> */
+        height: 194px;                /* <!-- altura fixa igual à largura (quadrado) --> */
     }
 
     label {
-        display: none;
+        display: none;                /* <!-- esconde ícone/label do menu (menu desktop não precisa) --> */
     }
 
     nav ul {
-        position: static;
-        width: 100%;
-        height: auto;
-        background-color: transparent;
-        margin-top: 20px;
+        position: static;             /* <!-- reseta para fluxo normal --> */
+        width: 100%;                  /* <!-- ocupa toda a faixa disponível --> */
+        height: auto;                 /* <!-- altura natural --> */
+        background-color: transparent;/* <!-- sem fundo no menu horizontal --> */
+        margin-top: 20px;             /* <!-- afasta do topo --> */
     }
 
     nav ul li {
-        border: 0;
-        float: left;
+        border: 0;                    /* <!-- remove divisórias --> */
+        float: left;                  /* <!-- alinha itens lado a lado (menu horizontal) --> */
     }
 
     nav ul li a:hover {
-        color: var(--dourado);
+        color: var(--dourado);        /* <!-- destaca link no hover em desktop --> */
     }
 
     /* destaque */
     #destaque {
         /*Efeito Paralax bacanam em computadores*/
-        background-attachment: fixed; 
+        background-attachment: fixed; /* <!-- efeito parallax (fundo fixo) --> */
     }
 
     #hero img{
-        width: 400px;
-        height: 400px;
-
+        width: 400px;                 /* <!-- imagem grande no desktop --> */
+        height: 400px;                /* <!-- mantém quadrado antes do círculo --> */
     }
 
     .topic {
-        display:flex
-
+        display:flex;                 /* <!-- exibe novamente os tópicos --> */
     }
-
-
-
 }
 
+/* Fim - Notebook / PC <<<<<<<<<<<< */ /* <!-- fim do breakpoint 1200px --> */
 
-/* Fim - Notebook / PC <<<<<<<<<<<< */
 
-
-/* Full HD / 4K >>>>>>>>>>>>>>>>>>> */
+/* Full HD / 4K >>>>>>>>>>>>>>>>>>> */ /* <!-- telas bem largas (>=1400px) --> */
 @media (min-width: 1400px) {
 
     /* Layout */
     .container {
-        max-width: 1320px;
+        max-width: 1320px;            /* <!-- aumenta a largura máxima para telas grandes --> */
     }
 }
 
-/* Fim - Full HD / 4K <<<<<<<<<<<< */
+/* Fim - Full HD / 4K <<<<<<<<<<<< */ /* <!-- fim do breakpoint 1400px --> */
