@@ -5,6 +5,8 @@ Site one page da HR serviços afim de mostrar potifólio de serviços prestados.
 
 ![GitHub License](https://img.shields.io/github/license/marcosamuelira/HR-servicos)
 
+<img width="450" height="450" alt="Image" src="https://github.com/user-attachments/assets/b985ec2d-ffbb-486d-ab66-221d06bfb364" />
+
 
 
 
